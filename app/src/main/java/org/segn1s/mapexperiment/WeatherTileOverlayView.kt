@@ -25,7 +25,7 @@ class WeatherTileOverlayView @JvmOverloads constructor(
     private var lastTileUrl: String? = null
 
     // Ваш API-ключ OpenWeatherMap
-    private val apiKey = "ca646cae98b0454d34a94032e3311d85"
+    private val apiKey = ""
 
     fun updateTile(layer: String, x: Int, y: Int, z: Int, force: Boolean = false) {
         val url = "https://tile.openweathermap.org/map/$layer/$z/$x/$y.png?appid=$apiKey"
