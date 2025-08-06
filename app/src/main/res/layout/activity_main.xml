@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <org.segn1s.mapexperiment.WeatherTileOverlayView
+        android:id="@+id/weather_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layer_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/weatherCardBg">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="КАРТЫ ПОГОДЫ"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/layer_radio_group"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_clouds" android:text="Облака"/>
+                <RadioButton android:id="@+id/rb_precipitation" android:text="Осадки" android:checked="true"/>
+                <RadioButton android:id="@+id/rb_temp" android:text="Температура"/>
+                <RadioButton android:id="@+id/rb_wind" android:text="Ветер"/>
+                <RadioButton android:id="@+id/rb_humidity" android:text="Влажность"/>
+                <RadioButton android:id="@+id/rb_pressure" android:text="Давление"/>
+            </RadioGroup>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
